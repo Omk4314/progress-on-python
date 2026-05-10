@@ -53,6 +53,8 @@ def move_player():
     global player_location
     while True:
         go = input("\nWhere would you like to go?\nbedroom\nkitchen\nliving room\n\n ")
+        if go not in locations:
+            print("Invalid location please choose from the list")
         if player_location == go:
             print(f"Already in {player_location}")
         else:
@@ -72,10 +74,9 @@ def beast():
     if beast_location == player_location:
         print("you are Dead")
         retry_input = input("Would you like to play again?(yes/no) ")
-        if retry_input == "yes":
-            move_player()
-        else:
+        if retry_input != "yes":
             game_state = False
+        player_location = "bedroom"
     else:
         print("growlssss.........The beast is nearby")
         
@@ -92,8 +93,7 @@ def pick_up():
         print("Picking up...")
         inventory.append(tools.pop(player_location))
         print(f"inventory updated: {inventory}")
-    else:
-        game_end()
+    
 
 def game_end():
     global player_location
@@ -103,6 +103,6 @@ def game_end():
         game_state = False
     else:
         print("I am missing one more thing!")
-        move_player()
+        
 
 main()
