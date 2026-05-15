@@ -2,9 +2,12 @@ from datetime import date
 #Take input from user for target
 while True:
     try:
-        user_input = int(input("Enter you target date in (dd/mm/yyyy): "))
+        user_input = input("Enter you target date in (dd/mm/yyyy): ")
         day, month, year = user_input.split("/")
-    except (ValueError, AttributeError):
+        day = int(day)
+        month = int(month)
+        year = int(year)
+    except ValueError:
         print("Enter the date, month, year in dd/mm/yyyy format")
     else:
         break
