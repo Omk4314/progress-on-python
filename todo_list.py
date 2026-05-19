@@ -8,7 +8,9 @@ def main():
     print("\n\tWelcome to the app!")
     while True:
         while True:
-            usr = input("What would you like to do?(choose the corresponding number)\n1.Add Tasks\n2.Mark complete\n3.View Tasks\n4.Remove Task\n5.Press 'q' to quit\n-> ")
+            usr = input('''What would you like to do?(choose the corresponding number)\n1.Add Tasks
+                        \n2.Mark complete\n3.View Tasks\n4.Remove Task\n5.Press 'q' to quit\n-> ''')
+            
             if usr == "1" or usr == "2" or usr == "3" or usr == "4" or usr == "q":
                 break
         match usr:
