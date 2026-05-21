@@ -44,7 +44,6 @@ def save_contact():
             while True:
                 user["mob"] = input("Enter Mobile No.: ").strip()
                 user["email"] = input("Enter email: ").strip()
-                user["add"] = input("Enter address: ").strip()
                 if user["mob"].isdecimal():
                     break
                 else:
@@ -54,7 +53,7 @@ def save_contact():
                     break
                 else:
                     print("Invalid email!")
-                
+            user["add"] = input("Enter address: ").strip()   
             print("Contact saved...\n")
             show_contacts()
             break
