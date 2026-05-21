@@ -59,10 +59,10 @@ def save_contact():
             break
         while True:
             response = input("Do you want to save another contact?(yes/no)? ")
-            if response == "yes" or respone == "no":
+            if response == "yes" or response == "no":
                 break
         if response == "no":
-           app_running = False
+           break
 
 
 def show_contacts():
