@@ -12,7 +12,7 @@ def main():
     while True:
         while True:
             usr_response = input("1. Add Transaction\n2. View Monthly Report\n3. Export Report To CSV\n4.Delete Transaction\n5.Delete Report\n6.Exit\n--> ").strip()
-            if usr_response in ("1", "2", "3", "4", "5"):
+            if usr_response in ("1", "2", "3", "4", "5", "6"):
                 break
         match usr_response:
             case "1":
