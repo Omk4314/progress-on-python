@@ -1,0 +1,40 @@
+Design Doc For URL Shortner
+
+1. What it does?
+-> The URL Shortner takes long URLs for e.g. https://www.examplesite.com/s?k=#435 
+and converts it into a Short URL for e.g. bit.ly/5345. The URL shortner
+also records the date of when the URL was generated.
+
+2. The Data Model for each URL:
+-> Each URL Will be stored as:
+{
+    "long_url": "https://www.examplesite.com/s?k=#435",
+    "short_code": "5345",
+    "created_at": "2026-11-21"
+}
+
+3. API (What users can do):
+POST/long_URL(Server takes the long url and generates a short code)
+GET/short_code(When a user visits the short URL, the system looks up the code and redirects them to the original long URL.)
+Basically this is what user can do:
+1. Shorten a URL
+User sends: {"url": "https://very-long-link.com"}
+System returns: {"short_url": "my.ly/abc123"}
+2. Visit a short URL
+User clicks my.ly/abc123
+System looks up abc123, finds the long URL, sends user there
+
+4. Storage method:
+-> I am using JSON as a Storage method because, I am familiar with it and I have used JSON format in many projects.
+    I know there are other efficient ways like using a database but, I am more familiar with JSON's.
+
+5. Short Code Generation:
+-> I wil use Python's random module to generate 6 characters
+    I will check if the code already exists
+    if the code exists I will generate it again.
+
+6. Edge Cases:
+-> Duplicate Code: Check before Saving
+    Missing Code: Return "URL not found" message
+    Invalid URL: Check if the URL starts with "http"
+    Duplicate Long URL: If the same long URL is submitted again, I will return the existing short code instead of creating a new one.
