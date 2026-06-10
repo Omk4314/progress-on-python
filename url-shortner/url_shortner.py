@@ -3,7 +3,6 @@ import random
 import time
 import os
 
-#Command-line URLshortener. ShortenURL, retrieve original,list all, delete. Use JSON file storage
 class Url:
     
     def __init__(self, long_url):
