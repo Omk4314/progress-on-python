@@ -49,7 +49,7 @@ class Url:
 def main():
     while True:
         user_input = input("Enter URL: ").strip()
-        if user_input in ("https://", "http://"):
+        if user_input.startswith("https://") or user_input.startswith("http://"):
             break
     url = Url(user_input)
     url.shorten_url()
